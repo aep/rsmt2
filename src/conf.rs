@@ -80,9 +80,11 @@ impl SmtStyle {
             Yices2 => SmtConf {
                 style: self,
                 cmd,
-                options: vec![],
+                options: vec![
+                    "--incremental".into(),
+                ],
                 models: false,
-                incremental: false,
+                incremental: true,
                 parse_success: false,
                 unsat_cores: false,
                 check_sat_assuming: supported("check-sat-assuming"),

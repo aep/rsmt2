@@ -132,6 +132,7 @@ impl Sort2Smt for String {
 #[allow(non_camel_case_types)]
 #[derive(Clone, Copy)]
 pub enum Logic {
+    QF_UFBV,
     /// Quantifier-free uninterpreted functions.
     QF_UF,
     /// Quantifier-free linear integer arithmetic.
@@ -157,6 +158,7 @@ impl fmt::Display for Logic {
     fn fmt(&self, fmt: &mut fmt::Formatter) -> fmt::Result {
         use self::Logic::*;
         match *self {
+            QF_UFBV => write!(fmt, "QF_UFBV"),
             QF_UF => write!(fmt, "QF_UF"),
             QF_LIA => write!(fmt, "QF_LIA"),
             QF_NIA => write!(fmt, "QF_NIA"),
